@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <link rel="manifest" href="manifest.json">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus Routine | Excellence</title>
@@ -370,28 +368,12 @@
             document.getElementById('hint-sleep').innerText = "Tente dormir 8 horas para equilibrar os hormônios."; 
         }
 
-                window.onload = () => {
+        window.onload = () => {
             document.getElementById('user-age').value = state.age;
             document.getElementById('diary-area').value = state.diaryEntry;
             document.getElementById('streak-count').innerText = state.streak;
-            
-            // Funções de inicialização (apenas uma vez cada)
-            applyTheme(); 
-            renderTasks(); 
-            renderHabits(); 
-            renderIdeas(); 
-            updateLevel(); 
-            renderHealth();
-
-            // Ativação do Service Worker para permitir a instalação com o ícone
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('./sw.js')
-                    .then(() => console.log('Service Worker ativo!'))
-                    .catch(err => console.log('Erro no Service Worker:', err));
-            }
+            applyTheme(); renderTasks(); renderHabits(); renderIdeas(); updateLevel(); renderHealth();
         };
     </script>
 </body>
 </html>
-
-
